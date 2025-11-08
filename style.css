@@ -1,0 +1,226 @@
+< !doctype html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Your Name — Portfolio</title><meta name="description" content="Personal portfolio of Your Name — designer & developer." />< !-- Favicon placeholder --><link rel="icon" href="/favicon.ico" /><style>
+
+/* Minimal, modern CSS to keep this file self-contained */
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #9aa4b2;
+  --accent: #6514f0;
+  --glass: rgba(255, 255, 255, 0.04);
+  --max-w: 1100px;
+  --radius: 12px;
+  --gap: 1.25rem;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg), #071021 120%);
+  color: #e6eef8
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2rem
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: .4rem .6rem;
+  border-radius: 8px
+}
+
+nav a:hover,
+nav a.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04)
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 0
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin: 0 0 .5rem
+}
+
+.roles {
+  color: var(--accent);
+  font-weight: 600
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 1.1rem;
+  border-radius: var(--radius)
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem 0
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--gap)
+}
+
+.project {
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--card);
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem
+}
+
+footer {
+  padding: 2rem 0;
+  color: var(--muted);
+  text-align: center
+}
+
+.cta {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent), #4f46e5);
+  color: white;
+  text-decoration: none
+}
+
+form {
+  display: grid;
+  gap: .6rem
+}
+
+input,
+textarea {
+  background: #061026;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: .6rem;
+  border-radius: 8px;
+  color: inherit
+}
+
+.nav-toggle {
+  display: none
+}
+
+@media (max-width:900px) {
+  .hero {
+    grid-template-columns: 1fr
+  }
+
+  .about {
+    grid-template-columns: 1fr
+  }
+
+  nav ul {
+    display: none
+  }
+
+  .nav-toggle {
+    display: block
+  }
+}
+
+</style></head><body><header class="container"><div class="brand"><div class="logo">YN</div><div><div style="font-weight:700">Your Name</div><div style="font-size:12px;color:var(--muted)">Designer • Developer</div></div></div><nav aria-label="Main navigation"><button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" onclick="toggleNav(this)">Menu</button><ul id="main-nav"><li><a href="#home" class="active">Home</a></li><li><a href="#about">About</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#contact">Contact</a></li></ul></nav></header><main class="container">< !-- Home / Hero --><section id="home" class="hero" aria-label="Home"><div><p style="color:var(--muted);margin:0">Hi — I'm</p>
+ <h1>Your Name <span class="roles">• Front-end Developer</span></h1><p style="color:var(--muted);line-height:1.6">I build accessible,
+performant web experiences. I care about design systems,
+clean code,
+and fast load times. Here are a few projects I've shipped.</p>
+ <p style="margin-top:1rem"><a class="cta" href="#portfolio">View Portfolio</a></p></div><aside class="card"><h3 style="margin:0 0 .5rem">Contact</h3><p style="margin:0;color:var(--muted)">Email: <a href="mailto:you@example.com">you@example.com</a></p><p style="margin:.5rem 0 0;color:var(--muted)">Location: City, Country</p><div style="margin-top:1rem;display:flex;gap:.5rem"><a aria-label="GitHub" href="#">GitHub</a><a aria-label="LinkedIn" href="#">LinkedIn</a></div></aside></section>< !-- About --><section id="about" class="about" aria-label="About"><article><h2>About me</h2><p style="color:var(--muted);line-height:1.6">Short bio — 2–3 sentences that summarize your background, strengths, and what you're looking for. Example: I design and build web apps with a focus on usability and performance. I enjoy mentoring juniors and improving design systems.</p>
+
+
+<h3>Skills</h3><p style="color:var(--muted);margin:0">HTML • CSS • JavaScript • React • Accessibility • Performance</p><h3 style="margin-top:1rem">Experience</h3><ul style="color:var(--muted)"><li><strong>Role</strong>— Company (Year–Year)</li><li><strong>Role</strong>— Company (Year–Present)</li></ul></article><aside class="card"><h3>Quick facts</h3><p style="margin:0;color:var(--muted)">Open to freelance & remote work. Available from Month YYYY.</p></aside></section>< !-- Portfolio --><section id="portfolio" aria-label="Portfolio"><h2>Selected Work</h2><div class="portfolio-grid" style="margin-top:1rem"><div class="project"><h4 style="margin:0">Project One</h4><p style="color:var(--muted);margin:0">Short description of the project, tech used, and your role.</p><div style="margin-top:auto;display:flex;gap:.5rem"><a href="#">Live</a><a href="#">Code</a></div></div><div class="project"><h4 style="margin:0">Project Two</h4><p style="color:var(--muted);margin:0">Short description of the project, tech used, and your role.</p><div style="margin-top:auto;display:flex;gap:.5rem"><a href="#">Live</a><a href="#">Case Study</a></div></div><div class="project"><h4 style="margin:0">Project Three</h4><p style="color:var(--muted);margin:0">Short description of the project, tech used, and your role.</p><div style="margin-top:auto;display:flex;gap:.5rem"><a href="#">Live</a><a href="#">Code</a></div></div></div></section>< !-- Contact --><section id="contact" aria-label="Contact" style="padding-top:2rem"><h2>Contact</h2><p style="color:var(--muted);">Have a project or want to say hi? Fill the form below or email me at <a href="mailto:you@example.com">you@example.com</a>.</p><div style="max-width:700px;margin-top:1rem"><form onsubmit="submitForm(event)" class="card"><label>Name <input type="text" name="name" required placeholder="Your name" /></label><label>Email <input type="email" name="email" required placeholder="you@example.com" /></label><label>Message <textarea name="message" rows="5" required placeholder="Tell me about your project..."></textarea></label><div style="display:flex;gap:.6rem;align-items:center"><button type="submit" class="cta">Send message</button><div style="color:var(--muted);font-size:13px">Or email: <a href="mailto:you@example.com">you@example.com</a></div></div></form></div></section></main><footer><div class="container"><div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap"><div>© {
+  new Date().getFullYear()
+}
+
+Your Name</div><div style="color:var(--muted)">Built with ❤️ — simple,
+accessible,
+responsive.</div></div></div></footer><script> // Small helpers: mobile nav toggle, smooth-scroll active link highlighting, simple form stub
+
+function toggleNav(btn) {
+  const expanded=btn.getAttribute('aria-expanded')==='true';
+  btn.setAttribute('aria-expanded', String( !expanded));
+  const ul=document.getElementById('main-nav');
+  if(ul.style.display==='flex' || ul.style.display==='') ul.style.display='none';
+  else ul.style.display='flex';
+}
+
+// Smooth scroll and active state
+document.querySelectorAll('nav a[href^="#"]').forEach(a=> {
+    a.addEventListener('click', e=> {
+        e.preventDefault();
+        const id=a.getAttribute('href').slice(1);
+
+        document.getElementById(id).scrollIntoView({
+          behavior:'smooth', block:'start'
+        });
+      document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+      a.classList.add('active');
+    })
+
+}) function submitForm(e) {
+  e.preventDefault();
+  const form=e.target;
+  // In production: submit to serverless endpoint or email API.
+  alert('Thanks — your message was received (demo only).');
+  form.reset();
+}
+
+</script></body></html>

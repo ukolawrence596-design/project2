@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Back to Top Button Styles */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 50%;
+      background-color: #0078ff;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    #backToTop.show {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #backToTop:hover {
+      background-color: #005fcc;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container">
+    <div class="logo">Your Name</div>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>Hi, I'm Your Name</h1>
+        <p>I build clean, modern, and responsive websites.</p>
+        <a class="cta-btn" href="#portfolio">View My Work</a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div>
+        <h2>About Me</h2>
+        <p>I am a passionate web developer who loves crafting beautiful and functional user experiences.</p>
+      </div>
+      <div>
+        <h3>Skills</h3>
+        <p>HTML • CSS • JavaScript • React • Node.js</p>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <article class="project"><h3>Project 1</h3><p>Description here.</p></article>
+        <article class="project"><h3>Project 2</h3><p>Description here.</p></article>
+        <article class="project"><h3>Project 3</h3><p>Description here.</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Go to top">↑</button>
+
+  <script>
+    // Update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Back to Top Button Functionality
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add("show");
+      } else {
+        backToTopButton.classList.remove("show");
+      }
+    });
+
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+</body>
+</html>
